@@ -11,7 +11,7 @@ def download_file(url, filename):
 
 def create_or_verify_wallet():
     """Create a new Solana wallet"""
-    keypair_path = '/home/jozef/.config/solana/id.json'
+    keypair_path = '/root/.config/solana/id.json'
     subprocess.run(['solana-keygen', 'new', '--outfile', keypair_path], check=True)
     return keypair_path
 
@@ -73,3 +73,4 @@ if __name__ == '__main__':
     eth_address = sys.argv[1]
     keypair_path = create_or_verify_wallet()
     setup_solana_client(eth_address, keypair_path)
+
